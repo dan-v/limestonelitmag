@@ -30,3 +30,9 @@ Steps on installation
     }
 }
 </pre>
+
+* Once the database is complete run <i>python manage.py sql limestone</i>
+* Then run <i>python manage.py syncdb</i>
+
+* After that you should be ready to go for test by running <i>python manage.py runserver</i>
+
