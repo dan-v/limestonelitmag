@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="page-header">
-            {% if latest_issue %}
+            {% if issue %}
               {% for issue in latest_issue %}
                 {% if issue.latest_issue %}
                   <h2>{{ issue.display_name }} Issue</h2>
@@ -20,8 +20,8 @@
         <div class="col-lg-4 col-md-4">
           <h3>Fiction</h3>
           <ul>
-          {% if latest_story_list_fiction %}
-            {% for story in latest_story_list_fiction %}
+          {% if story_list_fiction %}
+            {% for story in story_list_fiction %}
               <li>{{ story.headline }}</li>
             {% endfor %}
           {% else %}
@@ -32,8 +32,8 @@
         <div class="col-lg-4 col-md-4">
           <h3>Poetry</h3>
           <ul>
-          {% if latest_story_list_poetry %}
-            {% for story in latest_story_list_poetry %}
+          {% if story_list_poetry %}
+            {% for story in story_list_poetry %}
               <li>{{ story.headline }}</li>
             {% endfor %}
           {% else %}
