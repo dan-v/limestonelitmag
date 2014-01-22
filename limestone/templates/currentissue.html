@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            {% if latest_issue %}
+              {% for issue in latest_issue %}
+                {% if issue.latest_issue %}
+                  <h2>{{ issue.display_name }} Issue</h2>
+                  <p>{{ issue.overview }}</p>
+                {% endif %}
+              {% endfor %}
+            {% endif %}   
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4">
+          <h3>Fiction</h3>
+          <ul>
+          {% if latest_story_list %}
+            {% for story in latest_story_list %}
+              {% if story.story_type == "Fiction" %}
+                <li>{{ story.headline }}</li>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <li>No stories are available.</li>
+          {% endif %}
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h3>Poetry</h3>
+          <ul>
+          {% if latest_story_list %}
+            {% for story in latest_story_list %}
+              {% if story.story_type == "Poetry" %}
+                <li>{{ story.headline }}</li>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <li>No stories are available.</li>
+          {% endif %}
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h3>Art</h3>
+          <ul>
+            <li>Any media welcome</li>
+          </ul>
+        </div>
+      </div><!-- /.row -->
+  </div>
+
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4">
+          <h3><i class="fa fa-envelope-o"></i>  Submit work to</h3>
+          <p> limestone.litmag@gmail.com</p>
+        </div>
+      </div><!-- /.row -->
+  </div>
+
+{% endblock %}

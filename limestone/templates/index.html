@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="page-header" id="banner">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="bs-example">
+          <div class="jumbotron">
+            <h3>Limestone is</h3>
+            <p>a multipurposed sedimentary rock—a vessel for fossils, mixed with volcanic ash in ancient times for concrete, superstitiously believed to be a conduit for energy, and heated to manufacture steel, tan leather and refine sugar. Likewise Limestone the journal pursues a dynamic variety: to record, preserve, create, ignite, convey.</p>
+            <p><a href="about.html" class="btn btn-primary btn-lg">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <small>Amanda Hartzell in <cite title="Source Title">"The fox walked home"</cite></small>
+          </blockquote>
+          <blockquote class="pull-right">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <small>Mandala Scott in <cite title="Source Title">"I own a cat"</cite></small>
+          </blockquote>
+          <div class="page-header">
+            {% if latest_issue %}
+              {% for issue in latest_issue %}
+                {% if issue.latest_issue %}
+                  <h3>{{ issue.display_name }} - Top stories </h3>
+                {% endif %}
+              {% endfor %}
+            {% endif %}   
+          </div>
+
+          <ul>
+            {% if latest_story_list %}
+              {% for story in latest_story_list %}
+                <li><h4>{{ story.headline }}<small>  by {{ story.author }}</small></h4></li>
+              {% endfor %}
+            {% else %}
+                <p>No stories are available.</p>
+            {% endif %}
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!--   <div class="page-header">
+    <h2 id="type">Current issue - Top stories</h2>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul>
+            {% if latest_story_list %}
+              {% for story in latest_story_list %}
+                <li><h3>{{ story.headline }}<small>  by {{ story.author }}</small></h3></li>
+              {% endfor %}
+            {% else %}
+                <p>No stories are available.</p>
+            {% endif %}
+          </ul>
+        </div>
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </div><!-- /.section -->
+{% endblock %}
