@@ -9,7 +9,7 @@ class HeadlineAdmin(admin.ModelAdmin):
 	list_display = ('author', 'active')
 
 class IssueAdmin(admin.ModelAdmin):
-	fields = ['display_name', 'issue_month', 'issue_year', 'overview', 'latest_issue', 'active_issue']
+	fields = ['display_name', 'issue_date', 'overview', 'latest_issue', 'active_issue']
 	list_display = ('display_name', 'latest_issue', 'active_issue')
 
 class StoryAdmin(admin.ModelAdmin):

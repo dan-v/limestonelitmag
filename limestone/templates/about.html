@@ -2,19 +2,38 @@
 
 {% block content %}
   <div class="container">
+    <div class="page-header" id="banner">
       <div class="row">
-        <div class="col-lg-12">
+<!--         <div class="col-lg-6">
+          <div class="bs-example">
+            <div class="jumbotron">
+              <h3>Limestone is</h3>
+              <p>a multipurposed sedimentary rock—a vessel for fossils, mixed with volcanic ash in ancient times for concrete, superstitiously believed to be a conduit for energy, and heated to manufacture steel, tan leather and refine sugar. Likewise Limestone the journal pursues a dynamic variety: to record, preserve, create, ignite, convey.</p>
+            </div>
+          </div>
+        </div>
+ -->
+        <div class="col-lg-6 col-md-6 col-sm-8">
           <div class="page-header">
             <h2 id="type">What we're about</h2>
           </div>
+          <p> We seek language challenges, stories that confront, art that delves. We are interested in emerging artists who are attracted to the unexpected and compelled to explore ways word and image create soundscape and topography.
+          </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <p> We seek language challenges, stories that confront, art that delves. We are interested in emerging artists who are attracted to the unexpected and compelled to explore ways word and image create soundscape and topography.</p>
+      <div class="col-lg-6 col-md-6 col-sm-4">
+        <div class="page-header">
+          <h2>Contributors</h2>
         </div>
-      </div>
+        <ul>
+          {% if author_list %}
+            {% for author in author_list %}
+              <li> {{ author.author_name }}</li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+    </div>
   </div>
+</div>
 
   <div class="container">
     <div class="row">
@@ -24,7 +43,7 @@
         </div>
       </div>
     <div class="row">
-      <div class="col-lg-4 col-md-12 col-sm-12">
+      <div class="col-lg-4 col-md-4 col-sm-12">
           <img class="img-circle img-responsive" src="static/images/amanda.png">
           <h3>Amanda Hartzell <small> Writer & Designer</small></h3>
           <p>
@@ -38,7 +57,7 @@
           </ul>
       </div>
 
-      <div class="col-lg-4 col-md-12 col-sm-12">
+      <div class="col-lg-4 col-md-4 col-sm-12">
           <img class="img-circle img-responsive" src="static/images/jeb.png">
           <h3>Jeb Garcia <small> Software Engineer</small></h3>
           <p>
@@ -53,7 +72,7 @@
 
       </div>
       <br>
-      <div class="col-lg-4 col-md-12 col-sm-12">
+      <div class="col-lg-4 col-md-4 col-sm-12">
           <img class="img-circle img-responsive" src="http://placehold.it/200x200">
           <h3>Kristian Macaron <small> Writer</small></h3>
           <p>
@@ -69,7 +88,7 @@
       </div>
     </div>
     
-    <div class="col-lg-4 col-md-12 col-sm-12">
+    <div class="col-lg-4 col-md-4 col-sm-12">
         <img class="img-circle img-responsive" src="/static/images/mandalaprofile.png">
         <h3> Mandala Scott <small> Writer</small></h3>
         <p>
@@ -84,7 +103,7 @@
 
     </div>
 
-    <div class="col-lg-4 col-md-12 col-sm-12">
+    <div class="col-lg-4 col-md-4 col-sm-12">
         <img class="img-circle img-responsive" src="/static/images/jackieprofile.jpg">
         <h3> Jacqueline Ryan <small> Writer</small></h3>
         <p>
