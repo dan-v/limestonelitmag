@@ -17,9 +17,10 @@ def about(request):
 	return render(request, 'about.html')
 
 def currentissue(request):
-	latest_issue = Issue.objects.filter(latest_issue='True')
-	latest_story_list = Story.objects.filter(issue=latest_issue)
-	context = {'latest_issue': latest_issue, 'latest_story_list': latest_story_list}
+	latest_issue = Issue.objects.filter(latest_issue='True', active_issue='True')
+	latest_story_list_fiction = Story.objects.filter(issue=latest_issue, story_type='Fiction')
+	latest_story_list_poetry = Story.objects.filter(issue=latest_issue, story_type='Poetry')
+	context = {'latest_issue': latest_issue, 'latest_story_list_fiction': latest_story_list_fiction, 'latest_story_list_poetry': latest_story_list_poetry}
 
 	return render(request, 'currentissue.html', context)
 
