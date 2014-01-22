@@ -29,6 +29,12 @@ YEAR_CHOICES = (
 	('2016', '2016'),
 )
 
+class Author(models.Model):
+	author_name = models.CharField(max_length=32)
+
+	def __unicode__(self):
+		return self.author_name
+
 class Issue(models.Model):
 	overview = models.TextField()
 	issue_month = models.CharField(max_length=10, choices=MONTH_CHOICES)
@@ -45,8 +51,15 @@ class Story(models.Model):
 	headline = models.CharField(max_length=200, null=True, blank=True)
 	content = models.TextField()
 	story_type = models.CharField(max_length=7, choices=STORY_CHOICES)
-	author = models.CharField(max_length=32)
+	author = models.ForeignKey(Author)
 
 	def __unicode__(self):
 		return self.headline
 
+class Headline(models.Model):
+	quote = models.CharField(max_length=200, null=True, blank=True)
+	active = models.BooleanField()
+	author = models.ForeignKey(Author)
+
+	def __unicode__(self):
+		return self.quote
