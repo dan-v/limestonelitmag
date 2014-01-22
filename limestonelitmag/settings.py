@@ -64,9 +64,9 @@ WSGI_APPLICATION = 'limestonelitmag.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
+        'NAME': 'limestonedb',
+        'USER': 'limestoneuser',
+        'PASSWORD': 'StArt123!',
         'HOST': '',
         'PORT': '',
     }
