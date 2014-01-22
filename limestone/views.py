@@ -5,8 +5,8 @@ from models import Story, Issue
 from django.http import HttpResponse
 
 def index(request):
-	latest_story_list = Story.objects.order_by('-headline')[:5]
-	latest_issue = Issue.objects.filter(latest_issue='True')
+	latest_issue = Issue.objects.filter(latest_issue='True', active_issue='True')
+	latest_story_list = list(Story.objects.filter(issue=latest_issue).order_by('-headline')[:5])
 	context = {'latest_story_list': latest_story_list, 'latest_issue': latest_issue}
 	return render(request, 'index.html', context)
 

@@ -35,6 +35,7 @@ class Issue(models.Model):
 	issue_year = models.CharField(max_length=4, choices=YEAR_CHOICES)
 	display_name = models.CharField(max_length=20)
 	latest_issue = models.BooleanField()
+	active_issue = models.BooleanField()
 	
 	def __unicode__(self):
 		return self.display_name

@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'limestone',
-    'bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,10 +62,10 @@ WSGI_APPLICATION = 'limestonelitmag.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': 'limestonedb',
-        'USER': 'limestoneuser',
-        'PASSWORD': 'StArt123!',
+        'ENGINE':'django.db.backends.sqlite3',
+        'NAME': 'sqlitedb',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '',
         'PORT': '',
     }

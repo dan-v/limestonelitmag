@@ -29,11 +29,9 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-lg-6">
           <div class="page-header">
-            {% if latest_issue %}
+            {% if latest_issue  %}
               {% for issue in latest_issue %}
-                {% if issue.latest_issue %}
                   <h3>{{ issue.display_name }} - Top stories </h3>
-                {% endif %}
               {% endfor %}
             {% endif %}   
           </div>
