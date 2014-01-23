@@ -1,12 +1,14 @@
 {% extends 'magazine/magazine_base.html' %}
 
 {% block contents %}
-<h1>All Issues</h1>
+<div class="page-header">
+	<h2>All Issues</h2>
+</div>
 
 {% for issue in issues %}
-    <h2><a href="{{ issue.get_absolute_url }}" title="View {{ issue }}">{{ issue }}
+    <h3><a href="{{ issue.get_absolute_url }}" title="View {{ issue }}">{{ issue }}
     <span class="magazine_list_publish_date"> - {{ issue.issue_date|date:"F Y" }}</span>
-    <span class="magazine_list_article_count">({{ issue.num_articles }} article{{ issue.num_articles|pluralize }})</span></a></h2>
+    <span class="magazine_list_article_count">({{ issue.num_articles }} article{{ issue.num_articles|pluralize }})</span></a></h3>
 {% endfor %}
 
 {% endblock %}

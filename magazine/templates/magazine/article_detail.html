@@ -4,7 +4,7 @@
 
 {% block contents %}
 <p><a href="{{ issue.get_absolute_url }}" title="Back to {{ issue }}" class="issue_back_button">&laquo; Back to {{ issue }}</a></p>
-<h1>{{ article.title|ampersands }}</h1>
+<h2>{{ article.title|ampersands }}</h2>
 
 <p class="magazine_author_tag">
     By {% spaceless %}{% include 'magazine/_authors.html' with object=article %}{% endspaceless %}.
@@ -12,11 +12,11 @@
 
 {% if article.issue.embargoed %}
     {% if user.is_staff %}
-    {% include 'magazine/_article_embargoed_staff.html' %}
-    {{ article.demoted_text|safe }}
+<!--     {% include 'magazine/_article_embargoed_staff.html' %}
+ -->    {{ article.demoted_text|safe }}
     {% else %}
-    {% include 'magazine/_article_embargoed.html' %}
-    <p class="magazine_article_teaser">{{ article.teaser }}</p>
+<!--     {% include 'magazine/_article_embargoed.html' %}
+ -->    <p class="magazine_article_teaser">{{ article.teaser }}</p>
     {% endif %}
 {% else %}
     {{ article.demoted_text|safe }}
