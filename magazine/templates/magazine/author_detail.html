@@ -1,0 +1,45 @@
+{% extends 'magazine/magazine_base.html' %}
+
+{% load magazine_tags %}
+{% load url from future %}
+
+{% block contents %}
+<h1>{{ author }}</h1>
+
+{% if author.details %}
+    {{ author.details|linebreaks }}
+{% endif %}
+
+{% for article in articles %}
+    <h2>
+        <a href="{{ article.get_absolute_url }}" title="View Article">{{ article.title|ampersands }}</a>
+        <span class="magazine_issue_link">(<a href="{{ article.issue.get_absolute_url }}" title="View more articles from {{ article.issue }}">{{ article.issue }}</a>)</span>
+    </h2>
+    <p>{{ article.teaser }}</p>
+{% endfor %}
+
+{% if num_articles != articles|length %}
+<p><a href="{% url 'magazine_author_articles' author.pk %}" title="View all {{ num_articles }} articles by {{ author }}">View all {{ num_articles }} articles by {{ author }}</a>.</p>
+{% endif %}
+
+{% if book_reviews %}
+<h2>Book Reviews</h2>
+<ul class="book_reviews">
+{% for review in book_reviews %}
+    <li>
+        <a href="{{ review.get_absolute_url }}" title="Read a review of '{{ review }}'">{{ review.title }}</a>
+        {% if review.book_author %}
+            (by {{ review.book_author }})
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+
+{% if num_book_reviews != book_reviews|length %}
+<p><a href="{% url 'magazine_author_book_reviews' author.pk %}" title="View all {{ num_book_reviews }} book reviews by {{ author }}">View all {{ num_book_reviews }} book reviews by {{ author }}</a>.</p>
+{% endif %}
+
+
+{% endif %}
+
+{% endblock %}

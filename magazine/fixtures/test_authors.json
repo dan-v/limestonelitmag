@@ -1,0 +1,27 @@
+[
+  {
+    "pk": 1,
+    "model": "magazine.author",
+    "fields": {
+      "forename": "Paul",
+      "surname": "Beasley-Murray"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "magazine.author",
+    "fields": {
+      "forename": "Dominic",
+      "surname": "Rodger",
+      "details": "The developer of django-magazine."
+    }
+  },
+  {
+    "pk": 3,
+    "model": "magazine.author",
+    "fields": {
+      "forename": "Bugs",
+      "indexable": "False"
+    }
+  }
+]
