@@ -1,0 +1,52 @@
+[
+  {
+    "pk": 1,
+    "model": "magazine.article",
+    "fields": {
+      "title": "My first article",
+      "subheading": "Subheading 1",
+      "authors": [1],
+      "description": "Witty description of the first article",
+      "issue": 1
+    }
+  },
+  {
+    "pk": 2,
+    "model": "magazine.article",
+    "fields": {
+      "title": "My second article",
+      "subheading": "Subheading 2",
+      "authors": [2],
+      "text": "Full text of the second article. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "issue": 1
+    }
+  },
+  {
+    "pk": 3,
+    "model": "magazine.article",
+    "fields": {
+      "title": "My third article",
+      "authors": [2],
+      "issue": 2
+    }
+  },
+  {
+    "pk": 4,
+    "model": "magazine.article",
+    "fields": {
+      "title": "My fourth article (part of an unpublished issue)",
+      "authors": [2],
+      "issue": 3
+    }
+  },
+  {
+    "pk": 5,
+    "model": "magazine.article",
+    "fields": {
+      "title": "My third article (by 2 authors)",
+      "authors": [1,2],
+      "issue": 2,
+      "text": "<h1>Heading 1</h1>\n<p>Test</p>\n<h2>Heading 2</h2>\n<h3>Heading 3</h3>\n<h4>Heading 4</h4>\n<h5>Heading 5</h5>\n"
+    }
+  }
+]
