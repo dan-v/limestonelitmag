@@ -32,14 +32,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    # 'django_admin_boostrapped.bootstrap3',
-    # 'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
+    'sorl.thumbnail',
     'magazine'
 )
 
@@ -88,5 +88,21 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_URL = "/static/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
-STATIC_URL = '/static/'
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': "advanced",
+    'relative_urls': False,
+    'theme_advanced_toolbar_location': "top",
+    'theme_advanced_buttons1': ("bold,italic,separator,bullist,numlist,"
+                                "separator,blockquote,separator,link,unlink,"
+                                "separator,image,separator,pasteword,cleanup,"
+                                "code"),
+    'theme_advanced_buttons2': "",
+    'theme_advanced_buttons3': "",
+    'plugins': "paste",
+}

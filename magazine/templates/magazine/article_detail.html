@@ -1,5 +1,5 @@
 {% extends 'magazine/magazine_base.html' %}
-
+{% load static %}
 {% load magazine_tags %}
 
 {% block contents %}
@@ -11,12 +11,13 @@
 </p>
 
 {% if article.issue.embargoed %}
+<img src="{% get_media_prefix %}{{ article.image }}">{{ article.image }}</img>
     {% if user.is_staff %}
 <!--     {% include 'magazine/_article_embargoed_staff.html' %}
  -->    {{ article.demoted_text|safe }}
     {% else %}
 <!--     {% include 'magazine/_article_embargoed.html' %}
- -->    <p class="magazine_article_teaser">{{ article.teaser }}</p>
+ -->    {{ article.demoted_text|safe }}
     {% endif %}
 {% else %}
     {{ article.demoted_text|safe }}

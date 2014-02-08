@@ -199,7 +199,7 @@ class Article(models.Model):
     hits = models.IntegerField(default=0)
     issue = models.ForeignKey(Issue)
     order_in_issue = models.PositiveIntegerField(default=0)
-    image = ImageField(upload_to='magazine', blank=True, null=True)
+    image = ImageField(upload_to='media', blank=True, null=True)
     updated = models.DateTimeField(auto_now=True, default=datetime.now(),
                                    verbose_name=u'Last Updated')
 
